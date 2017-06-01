@@ -19,7 +19,12 @@ public class User {
         this.userName = userName;
         this.account = account;
     }
-    
+
+    public User(String userName, Integer account) {
+        this.userName = userName;
+        this.account = account;
+    }
+
     public User() {
     }
 
