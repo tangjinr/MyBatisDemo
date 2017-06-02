@@ -20,7 +20,7 @@
     <mappers>
         <mapper resource="mapper/userMapper.xml"/>
         <mapper resource="mapper/userMapperMoreOp.xml"/>
-        <mapper resource="mapper/userMapperConstructor.xml"/>
+        <mapper resource="mapper/userMapperCollection.xml"/>
     </mappers>
 
 </configuration>

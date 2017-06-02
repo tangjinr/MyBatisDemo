@@ -32,9 +32,9 @@ public class HelloMyBatis {
             UserOp userOp = session.getMapper(UserOp.class);
             // 6. 完成查询操作
             User user = userOp.getUser(2);
-            System.out.println(user.getId() + " " + user.getUserName() + " ");
-//            System.out.print(user.getCourses().get(0).getCourseName() + " ");
-//            System.out.print(user.getCourses().get(0).getTeacher().getTeacherName());
+            System.out.print(user.getId() + " " + user.getUserName() + " ");
+            System.out.print(user.getCourses().get(0).getCourseName() + " ");
+//            System.out.println(user.getCourses().get(0).getTeacher().getTeacherName());
         } finally {
             // 7.关闭Session
             session.close();

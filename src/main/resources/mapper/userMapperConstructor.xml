@@ -10,6 +10,7 @@
         </constructor>
     </resultMap>
 
+    <!-- column对应这里的id, userName, corp，必须一致，也就是数据库表中的列名 -->
     <select id="getUser" parameterType="int"
             resultMap="UserMap">
         select id, userName, corp from user where id = #{id}

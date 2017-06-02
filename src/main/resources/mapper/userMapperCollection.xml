@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangz.mybatisdemo.resultmap.UserOp">
+
+    <resultMap id="UserMap" type="com.tangz.mybatisdemo.resultmap.User">
+        <constructor>
+            <idArg column="userId" javaType="int"/>
+            <arg column="userName" javaType="String"/>
+            <arg column="corp" javaType="String"/>
+        </constructor>
+        <collection property="courses" ofType="com.tangz.mybatisdemo.resultmap.Course">
+            <id property="id" column="courseId"/>
+            <result property="courseName" column="courseName"/>
+        </collection>
+    </resultMap>
+
+    <!-- column对应这里的userId,userName,corp等，必须一致 -->
+    <!-- property对应User类中的属性名，必须一致 -->
+    <select id="getUser" parameterType="int"
+            resultMap="UserMap">
+        select u.id
+        as userId,userName,courseName,corp,c.id as courseId from user u
+        left join userCourse uc on u.id = uc.user_id
+        left join course c on c.id = uc.course_id
+        where u.id = #{id}
+    </select>
+
+</mapper>
