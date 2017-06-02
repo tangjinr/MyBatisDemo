@@ -3,6 +3,6 @@
 <mapper namespace="com.tangz.mybatisdemo.GetUserInfo">
     <select id="getUser" parameterType="int"
             resultType="com.tangz.mybatisdemo.User">
-        select id, userName, account from user where id = #{id}
+        select id, userName, account from user_t where id = #{id}
     </select>
 </mapper>
